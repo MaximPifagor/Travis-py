@@ -1,5 +1,4 @@
-dist: trusty # используем Ubuntu 14.04 Trusty Tahr (а не 12.02 Precise
-Pangolin)
+dist: trusty # используем Ubuntu 14.04 Trusty Tahr (а не 12.02 PrecisePangolin)
 sudo: required # используем Virtual Machine (а не Docker container)
 language: cpp # на практике разницы между специфичным для C++ окружением
 # и, скажем, python -- никакой. Но пусть будет cpp.
@@ -40,10 +39,9 @@ script:
 deploy:
 # выкладываем tagged-коммиты на GitHub Releases:
 provider: releases
-file: &lt;package-file&gt;
+file: main.cpp
 skip_cleanup: true
 overwrite: true
 api_key:
-secure: &lt;encrypted-github-token&gt;
 on:
 tags: true
